@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="generator" content="AsciiDoc 8.6.9">
+      <title>HCI/CprE/ComS 575: Homework #2</title>
+      <link rel="stylesheet" href="./riak.css" type="text/css">
+      <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+   </head>
+   <body class="article">
+      <div id="header">
+         <h1>HCI/CprE/ComS 575: Homework #2 Solution</h1>
+         <span id="author">Karter Krueger</span><br>
+         <span id="email" class="monospaced">&lt;
+         <a href="mailto:Your Email">karterk@iastate.edu</a>&gt;</span><br>
+      </div>
+      <div id="content">
+         <div class="sect1">
+            <h2 id="_part_1a">Part 1A</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                 <p>Write a programs with OpenCV to identify and label the 64 squares on the
+                 chess board with &apos;a1&apos;, &apos;b1&apos;,
+                 &apos;a2&apos;, ..., &apos;g8&apos; and &apos;h8&apos;.
+                  </p>
+               </div>
+               <div class="sect2">
+                  <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                     <col style="width:50%;">
+                     <col style="width:50%;">
+                     <tbody>
+                        <tr>
+                           <td class="tableblock halign-left valign-top" >
+                              <p class="tableblock"><span class="image">
+                                 <img src="Parts/Part_1/p1_board.jpg" alt="Parts/Part_1/p1_board.jpg" width="100%">
+                                 </span>
+                              </p>
+                           </td>
+                           <td class="tableblock halign-left valign-top" >
+                              <p class="tableblock">
+                                 <span class="image">
+                                    <img src="Parts/Part_1/p1a_out.png" alt="Handle" width="100%">
+                                 </span>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div class="listingblock">
+                     <div class="title">Source</div>
+                     <div class="content monospaced">
+                        <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_1/p1a_code.cpp"></script>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_1d">Part 1B</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Write a program with OpenCV to flip the color of all squares, i.e., black to white, and white to black.
+                  </p>
+               </div>
+               <div class="sect2">
+                  <h3 id="_opencv1d">OpenCV</h3>
+                  <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                     <col style="width:50%;">
+                     <col style="width:50%;">
+                     <tbody>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                                 <img src="Parts/Part_1/p1_board.jpg" alt="Parts/Part_1/p1_board.jpg" width="100%">
+                                 </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                                 <span class="image">
+                                    <img src="Parts/Part_1/p1b_out.png" alt="Handle" width="100%">
+                                 </span>
+                           </p>
+                        </td>
+                     </tr>
+                     </tbody>
+                  </table>
+                  <div class="listingblock">
+                     <div class="title">Source</div>
+                     <div class="content monospaced">
+                        <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_1/p1b_code.cpp"></script>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_2a">Part 2A</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Write <strong>two</strong> programs, one with Matlab
+                 <strong>and</strong> another with OpenCV. Each program should find all pawns
+                 in the chessboard images below and highlight them
+                 (e.g., by drawing a bounding box around the pawn with a bright color).
+                  </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_1.jpg" alt="Parts/Part_2/p2_board_1.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_2.jpg" alt="Parts/Part_2/p2_board_2.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_3.jpg" alt="Parts/Part_2/p2_board_3.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2a_out_1.png" alt="Parts/Part_2/p2a_out_1.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2a_out_2.png" alt="Parts/Part_2/p2a_out_2.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2a_out_3.png" alt="Parts/Part_2/p2a_out_3.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_2/p2a_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_2b">Part 2B</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Count the number of black pawns and white pawns and place
+                 each pawn's index, starting from one, as a text overlay over each pawn accordingly.
+                 Thus, for example, the pawn in &apos;a2&apos; gets the index
+                 1;, the pawn in &apos;b2&apos; gets the index 2, and so forth
+                 until the last pawn gets the index 16.</p>
+                  </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_1.jpg" alt="Parts/Part_2/p2_board_1.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_2.jpg" alt="Parts/Part_2/p2_board_2.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_3.jpg" alt="Parts/Part_2/p2_board_3.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2b_out_1.png" alt="Parts/Part_2/p2b_out_1.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2b_out_2.png" alt="Parts/Part_2/p2b_out_2.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2b_out_3.png" alt="Parts/Part_2/p2b_out_3.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_2/p2b_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_2c">Part 2C</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Flip the colors of all pawns so that white becomes black
+                 and black becomes white.
+                  </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_1.jpg" alt="Parts/Part_2/p2_board_1.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_2.jpg" alt="Parts/Part_2/p2_board_2.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_2/p2_board_3.jpg" alt="Parts/Part_2/p2_board_3.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2c_out_1.png" alt="Parts/Part_2/p2c_out_1.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2c_out_2.png" alt="Parts/Part_2/p2c_out_2.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_2/p2c_out_3.png" alt="Parts/Part_2/p2c_out_3.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_2/p2c_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_3a">Part 3A</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Write a program to find all rooks and highlight them (fill in the rook with another color).</p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_1.jpg" alt="Parts/Part_3/p3_board_1.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_2.jpg" alt="Parts/Part_3/p3_board_2.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_3.jpg" alt="Parts/Part_3/p3_board_3.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3a_out_1.png" alt="Parts/Part_3/p3a_out_1.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3a_out_2.png" alt="Parts/Part_3/p3a_out_2.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3a_out_3.png" alt="Parts/Part_3/p3a_out_3.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_3/p3a_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_3b">Part 3B</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Modify your program to find all rooks, bishops, queens, and
+                 highlight them with a bright color. Use three different
+                 highlighting colors, to differentiate between these three types of chess figures.
+                 </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_1.jpg" alt="Parts/Part_3/p3_board_1.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_2.jpg" alt="Parts/Part_3/p3_board_2.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_3/p3_board_3.jpg" alt="Parts/Part_3/p3_board_3.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3b_out_1.png" alt="Parts/Part_3/p3b_out_1.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3b_out_2.png" alt="Parts/Part_3/p3b_out_2.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_3/p3b_out_3.png" alt="Parts/Part_3/p3b_out_3.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_3/p3b_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_4a">Part 4A</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Detect all white pawns on the top line, and all black pawns
+                  on the bottom line, and replace them with queens of the same
+                  color. That is, replace all white pawns on line 8 with white queens and
+                 all black pawns on line 1 with black queens. </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_1.jpg" alt="Parts/Part_4/p4_board_1.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_2.jpg" alt="Parts/Part_4/p4_board_2.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_3.jpg" alt="Parts/Part_4/p4_board_3.jpg" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4a_out_1.png" alt="Parts/Part_4/p4a_out_1.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4a_out_2.png" alt="Parts/Part_4/p4a_out_2.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+                        <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4a_out_3.png" alt="Parts/Part_4/p4a_out_3.png" width="100%">
+                              </span>
+                           </p>
+                        </td>
+
+                     </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_4/p4a_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_4b">Part 4B</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Modify your program from Part 4A to work with a slightly noisy board with grain.</p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_1_grain.jpg" alt="Parts/Part_4/p4_board_1_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_2_grain.jpg" alt="Parts/Part_4/p4_board_2_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_4/p4_board_3_grain.jpg" alt="Parts/Part_4/p4_board_3_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4b_out_1.png" alt="Parts/Part_4/p4b_out_1.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4b_out_2.png" alt="Parts/Part_4/p4b_out_2.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                              <span class="image">
+                                 <img src="Parts/Part_4/p4b_out_3.png" alt="Parts/Part_4/p4b_out_3.png" width="100%">
+                              </span>
+                        </p>
+                     </td>
+
+                  </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_4/p4b_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_5a">Part 5A</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Detect the position and color of all chess pieces and output the information to a text file.</p>
+               </div>
+               <div class="listingblock">
+                  <div class="title">Text Output Example for Image 1</div>
+                  <div class="content monospaced">
+                     <pre>
+A8: Black Rook
+B8: Empty
+C8: Empty
+... (continue top row (8) here)
+
+A7: Black Pawn
+B7: Black Pawn
+... (continue row here)
+
+...
+... (continue middle rows here)
+
+A1: White Rook
+B1: Empty
+C1: Empty
+D1: White King
+... (continue bottom row (1) here)</pre>
+                  </div>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_1.jpg" alt="Parts/Part_5/p5_board_1.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_2.jpg" alt="Parts/Part_5/p5_board_2.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_3.jpg" alt="Parts/Part_5/p5_board_3.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 1:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5a_out_1.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 2:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5a_out_2.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 3:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5a_out_3.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_5/p5a_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="sect1">
+            <h2 id="_part_5b">Part 5B</h2>
+            <div class="sectionbody">
+               <div class="paragraph">
+                  <p>Modify your program from Part 5A to work with a slightly noisy board with grain.</p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <col style="width:33%;">
+                  <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_1b_grain.jpg" alt="Parts/Part_5/p5_board_1b_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_2b_grain.jpg" alt="Parts/Part_5/p5_board_2b_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                              <img src="Parts/Part_5/p5_board_3b_grain.jpg" alt="Parts/Part_5/p5_board_3b_grain.jpg" width="100%">
+                              </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 1:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5b_out_1.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 2:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5b_out_2.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     <td class="tableblock halign-left valign-top">
+                        <div class="codetext">
+                           <h3><strong>Output 3:</strong></h3>
+                           <div class="listingblock">
+                              <div class="content monospaced">
+                                 <embed src="Parts/Part_5/p5b_out_3.txt">
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+                  </tbody>
+               </table>
+               <div class="listingblock">
+                  <div class="title">Source</div>
+                  <div class="content monospaced">
+                     <script charset="UTF-8" src="https://gist-it.appspot.com/github.com/kskrueger/CS575-2020/blob/master/HW2/Parts/Part_5/p5b_code.cpp"></script>
+                  </div>
+               </div>
+            </div>
+      </div>
+      <div id="footer">
+         <div id="footer-text">
+            Last updated 2020-04-10
+         </div>
+      </div>
+   </body>
+</html>
