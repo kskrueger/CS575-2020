@@ -1,0 +1,72 @@
+A8: Black Rook
+B8: Empty
+C8: Empty
+D8: Empty
+E8: Empty
+F8: Black Rook
+G8: Empty
+H8: Black King
+
+A7: Black Pawn
+B7: Black Pawn
+C7: Empty
+D7: Empty
+E7: Black Bishop
+F7: Empty
+G7: Black Pawn
+H7: Empty
+
+A6: Empty
+B6: Black Queen
+C6: Empty
+D6: Black Pawn
+E6: Empty
+F6: Empty
+G6: Empty
+H6: Black Pawn
+
+A5: Empty
+B5: Empty
+C5: Empty
+D5: Empty
+E5: Black Pawn
+F5: Empty
+G5: Empty
+H5: Empty
+
+A4: Empty
+B4: Empty
+C4: White Bishop
+D4: Empty
+E4: Empty
+F4: Empty
+G4: Black Knight
+H4: Empty
+
+A3: White Pawn
+B3: Empty
+C3: Empty
+D3: Empty
+E3: Empty
+F3: Empty
+G3: Empty
+H3: Empty
+
+A2: Empty
+B2: White Pawn
+C2: White Pawn
+D2: White Bishop
+E2: White Knight
+F2: White Pawn
+G2: White Pawn
+H2: White Pawn
+
+A1: White Rook
+B1: Empty
+C1: Empty
+D1: White Queen
+E1: Empty
+F1: White Rook
+G1: White King
+H1: Empty
+
