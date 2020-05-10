@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="generator" content="AsciiDoc 8.6.9">
+      <title>HCI/CprE/ComS 575: Homework #3</title>
+      <link rel="stylesheet" href="./riak.css" type="text/css">
+   </head>
+
+   <body class="article">
+      <div id="header">
+         <h1>HCI/CprE/ComS 575: Homework #3</h1>
+         <!-- MAKE CHANGES HERE: Student information -->
+         <span id="author">Your Name</span><br>
+         <span id="email" class="monospaced">&lt;
+         <a href="mailto:Your Email">Your Email</a>&gt;</span><br>
+         <!-- END CHANGES -->
+      </div>
+
+      <div id="content">
+	  <div id="preamble">
+				<div class="sectionbody">
+					<div class="paragraph">
+						<p>
+						For your output files to display in the HTML template, you will have to save/ convert them to  H.264 (*.mp4).
+						<br><br>
+						If you are having troubles with H.264, try downloading <a href="https://github.com/cisco/openh264/releases">this DLL</a> and placing it in the folder with the binary.
+						<br>
+						Alternatively, you can install <a href="https://ffmpeg.org/">FFMPEG</a> and use it to convert your .avi files to .mp4 using the command below.
+
+						<div class="listingblock">
+						<div class="title">FFMPEG Command</div>
+						<div class="content">
+							<pre><h4><tt>ffmpeg -i input.m4v -c:a aac -b:a 128k -c:v libx264 -crf 23 output.mp4</tt></h4></pre>
+						</div>
+					</div>
+
+						<br><br>
+						<strong>Do not waste time on this.</strong>
+						<br><br>
+						If you are unable to get these formats working within a few minutes, you are free to pick a different format or to let OpenCV pick its default - .avi is common.
+						</p>
+					</div>
+					<div class="listingblock">
+						<div class="title">FOURCC codes</div>
+						<div class="content">
+							<!-- Generator: GNU source-highlight 3.1.8
+								by Lorenzo Bettini
+								http://www.lorenzobettini.it
+								http://www.gnu.org/software/src-highlite -->
+							<pre><h4><tt><span style="font-weight: bold"><span style="color: #000000">CV_FOURCC</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'H'</span><span style="color: #990000">,</span><span style="color: #FF0000">'2'</span><span style="color: #990000">,</span><span style="color: #FF0000">'6'</span><span style="color: #990000">,</span><span style="color: #FF0000">'4'</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// For H.264</span></span>
+</span></tt></h4></pre>
+						</div>
+					</div>
+				</div>
+                                </div>
+                                <div>
+                                  <p><b>You can use either MATLAB or OpenCV for
+                                  writing your programs.</b></p></div>
+<!-- ---------------------------------- START PART 1a ---------------------------------- -->
+      <div class="sect1">
+         <h2 id="_part_1a">Part 1a</h2>
+         <div class="sectionbody">
+            <div class="paragraph">
+               <p>Write a program that reads an input video of the tetris game
+						and generates its grayscale
+              version of the same video. Your program should work for both movies shown below.
+               Modify the HTML file to link to your output graysacle videos so that they
+						show up in the web page below
+              the original color videos.
+               </p>
+            </div>
+            <table class="tableblock frame-all grid-all" style=" width:100%; ">
+               <col style="width:50%;">
+               <col style="width:50%;">
+               <tbody>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="video">
+                    <video width="100%" controls>
+                     <source src="part_1a/p1a_tetris_1.mp4" type="video/mp4">
+                     Your browser does not support HTML5 video.
+                    </video>
+                    </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock"><span class="image">
+                           <video width="100%" controls>
+                     <source src="part_1a/p1a_tetris_2.mp4" type="video/mp4">
+                     Your browser does not support HTML5 video.
+                    </video>
+                    </span>
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                           <span class="image">
+                             <video width="100%" controls>
+                        <!-- MAKE CHANGES HERE: Part 1a video 1 -->
+                        <source src="part_1a/p1a_output1.mp4" type="video/mp4">
+                        <!-- END CHANGES -->
+                        Your browser does not support HTML5 video.
+                      </video>
+                           </span>
+                        </p>
+                     </td>
+                     <td class="tableblock halign-left valign-top" >
+                        <p class="tableblock">
+                           <span class="image">
+                             <video width="100%" controls>
+                        <!-- MAKE CHANGES HERE: Part 1a video 2 -->
+                        <source src="part_1a/p1a_output2.mp4" type="video/mp4">
+                        <!-- END CHANGES -->
+                        Your browser does not support HTML5 video.
+                      </video>
+                           </span>
+                        </p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div class="listingblock">
+               <div class="title">Source</div>
+               <div class="content monospaced">
+                  <!-- MAKE CHANGES HERE: Part 1a OpenCV code -->
+                  <p>Note: change the file name to link your code</p>
+                  <div class="codetext">
+                     <object class="codeobject" type="text/html" data="part_1a/p1a_code.cpp"></object>
+                  </div>
+                  <!-- END CHANGES -->
+               </div>
+            </div>
+<!-- ----------------------------------- END PART 1a ----------------------------------- -->
+
+<!-- ---------------------------------- START PART 1b ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_1b">Part 1b</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+         <p>Write a program that reads an input video of the tetris game and
+        outputs a modified version of the same video that includes running counters of
+        how many squares of each color are left. For example, in the first video
+        these counters start from 0 and end up at purple 1, red 4, blue 5, cyan
+        1, and green 7. Link the modified versions of the videos with embedded
+        counters below the corresponding original videos.
+         </p>
+      </div>
+      <table class="tableblock frame-all grid-all" style=" width:100%; ">
+         <col style="width:50%;">
+         <col style="width:50%;">
+         <tbody>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_1b/p1b_tetris_1.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="image">
+                     <video width="100%" controls>
+                           <source src="part_1b/p1b_tetris_2.mp4" type="video/mp4">
+                           Your browser does not support HTML5 video.
+                     </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 1b video 1 -->
+                  <source src="part_1b/p1b_output1.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 1b video 2 -->
+                  <source src="part_1b/p1b_output2.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part 1b OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_1b/p1b_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+<!-- ----------------------------------- END PART 1b ----------------------------------- -->
+
+<!-- ---------------------------------- START PART 1c ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_1c">Part 1c</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+         <p>
+         Write a program that reads an input video of the tetris game and
+        outputs the same video with an overlayed counter of full lines
+        that have been removed during the game until the current frame.
+        Your program should process both movies shown below.
+        Modify the HTML file to link to your output videos so that they show up
+        in the web page.
+         </p>
+      </div>
+      <table class="tableblock frame-all grid-all" style=" width:100%; ">
+         <col style="width:50%;">
+         <col style="width:50%;">
+         <tbody>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_1c/p1c_tetris_1.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="image">
+                     <video width="100%" controls>
+               <source src="part_1c/p1c_tetris_2.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 1c video 1 -->
+                  <source src="part_1c/p1c_output1.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 1c video 2 -->
+                  <source src="part_1c/p1c_output2.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part 1c OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_1c/p1c_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+<!-- ----------------------------------- END PART 1c ----------------------------------- -->
+
+<!-- ---------------------------------- START PART 2a ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_1">Part 2a</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+         <p>
+            Write a program that reads an input video of the Super Mario
+        game and generates an annotated video that highlights the player
+        avatar in each video frame. For example, this can be done by drawing a
+        bounding box around the avatar.
+         </p>
+      </div>
+       <table class="tableblock frame-all grid-all" style=" width:100%; ">
+           <col style="width:50%;">
+           <col style="width:50%;">
+           <tbody>
+           <tr>
+               <td class="tableblock halign-left valign-top" >
+                   <p class="tableblock"><span class="video">
+                    <video width="100%" controls>
+               <source src="part_2a/p2a_mario_1.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2a  -->
+                  <source src="part_2a/p2a_mario_2.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2a  -->
+                  <source src="part_2a/p2a_mario_3.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2a video 1-->
+                  <source src="part_2a/p2a_output1.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2a video 2-->
+                  <source src="part_2a/p2a_output2.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2a video 3-->
+                  <source src="part_2a/p2a_output3.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part 2a OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_2a/p2a_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+
+<!-- ----------------------------------- END PART 2a ----------------------------------- -->
+<!-- ---------------------------------- START PART 2b ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_2b">Part 2b</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+         <p>
+        Write a program that reads the input video of the Super Mario game
+        and modifies its so that it displays a running counter of coins
+        collected by the player. In this game the player's avatar
+        does not always have to intersect with the coin to collect it because
+        coins hidden in brick squares can be collected by hitting them from
+        below by the avatar.
+           </p>
+      </div>
+      <table class="tableblock frame-all grid-all" style=" width:100%; ">
+         <tbody>
+
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_2b/p2b_mario_1.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_2b/p2b_mario_2.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_2b/p2b_mario_3.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2b video 1-->
+                  <source src="part_2b/p2b_output1.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2b video 2-->
+                  <source src="part_2b/p2b_output2.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2b video 3-->
+                  <source src="part_2b/p2b_output3.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part 2b OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_2b/p2b_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+
+<!-- ----------------------------------- END PART 2b ----------------------------------- -->
+<!-- ---------------------------------- START PART 2c ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_2c">Part 2c</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+        <p>
+        Modify your solution from Part 2b to also count the number of the fire
+        projectiles launched by the player. That is, your output videos for this
+        part should include both the coin counter and the counter of the fire projectiles.
+       </p>
+      </div>
+      <table class="tableblock frame-all grid-all" style=" width:100%; ">
+         <tbody>
+
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_2c/p2c_mario_1.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_2c/p2c_mario_2.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2c  -->
+                  <source src="part_2c/p2c_output1.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part 2c  -->
+                  <source src="part_2c/p2c_output2.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part 2c OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_2c/p2c_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+
+<!-- ----------------------------------- END PART 2c ----------------------------------- -->
+<!-- ---------------------------------- START PART 3 ---------------------------------- -->
+   <div class="sect1">
+       <h2 id="_part_3">Part 3</h2>
+       <div class="sectionbody">
+           <div class="paragraph">
+               <p>
+                   Repeat part 1C with the following two videos captured by the phone camera from
+             the screen.
+               </p>
+           </div>
+           <table class="tableblock frame-all grid-all" style=" width:100%; ">
+               <col style="width:50%;">
+               <col style="width:50%;">
+               <tbody>
+               <tr>
+                   <td class="tableblock halign-left valign-top" >
+                       <p class="tableblock"><span class="video">
+          <video width="100%" controls>
+           <source src="part_3/p3_tetris_1.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+          </video>
+          </span>
+                       </p>
+                   </td>
+                   <td class="tableblock halign-left valign-top" >
+                       <p class="tableblock"><span class="image">
+                 <video width="100%" controls>
+           <source src="part_3/p3_tetris_2.mp4" type="video/mp4">
+           Your browser does not support HTML5 video.
+          </video>
+          </span>
+                       </p>
+                   </td>
+               </tr>
+               <tr>
+                   <td class="tableblock halign-left valign-top" >
+                       <p class="tableblock">
+                 <span class="image">
+                   <video width="100%" controls>
+              <!-- MAKE CHANGES HERE: Part 3 video 1 -->
+              <source src="part_3/p1c_output1.mp4" type="video/mp4">
+                       <!-- END CHANGES -->
+              Your browser does not support HTML5 video.
+            </video>
+                 </span>
+                       </p>
+                   </td>
+                   <td class="tableblock halign-left valign-top" >
+                       <p class="tableblock">
+                 <span class="image">
+                   <video width="100%" controls>
+              <!-- MAKE CHANGES HERE: Part 3 video 2 -->
+              <source src="part_3/p1c_output2.mp4" type="video/mp4">
+                       <!-- END CHANGES -->
+              Your browser does not support HTML5 video.
+            </video>
+                 </span>
+                       </p>
+                   </td>
+               </tr>
+               </tbody>
+           </table>
+           <div class="listingblock">
+               <div class="title">Source</div>
+               <div class="content monospaced">
+                   <!-- MAKE CHANGES HERE: Part 3 OpenCV code -->
+                   <p>Note: change the file name to link your code</p>
+                   <div class="codetext">
+                       <object class="codeobject" type="text/html" data="part_1c/p1c_code.cpp"></object>
+                   </div>
+                   <!-- END CHANGES -->
+               </div>
+           </div>
+<!-- ----------------------------------- END PART 3 ----------------------------------- -->
+
+<!-- ---------------------------------- START PART ec1 ---------------------------------- -->
+<div class="sect1">
+   <h2 id="_part_ec1">Extra Credit 1</h2>
+   <div class="sectionbody">
+      <div class="paragraph">
+         <p>
+            Repeat task from Part 2B for the following three videos. Your coin counter
+        should agree with the game&apos;s coin counter.
+        Hint: you may need to stabilize the image before processing.
+         </p>
+      </div>
+      <table class="tableblock frame-all grid-all" style=" width:100%; ">
+         <tbody>
+
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_ec1/ec1_mario_1.m4v" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                  </p>
+               </td>
+
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_ec1/ec1_mario_2.m4v" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_ec1/ec1_mario_3.m4v" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+               <td class="tableblock halign-left valign-top" >
+                  <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part ec1 video 1 -->
+                  <source src="part_ec1/ec1_output1.mp4" type="video/mp4">
+                  <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part ec1 video 2 -->
+                  <source src="part_ec1/ec1_output2.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableblock halign-left valign-top" >
+                    <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part ec1 video 3 -->
+                  <source src="part_ec1/ec1_output3.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                    </p>
+                </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="listingblock">
+         <div class="title">Source</div>
+         <div class="content monospaced">
+            <!-- MAKE CHANGES HERE: Part ec1 OpenCV code -->
+            <p>Note: change the file name to link your code</p>
+            <div class="codetext">
+               <object class="codeobject" type="text/html" data="part_ec1/ec1_code.cpp"></object>
+            </div>
+            <!-- END CHANGES -->
+         </div>
+      </div>
+
+<!-- ----------------------------------- END PART ec1 ----------------------------------- -->
+
+<!-- ---------------------------------- START PART ec2 ---------------------------------- -->
+       <div class="sect1">
+           <h2 id="_part_ec2">Extra Credit 2</h2>
+           <div class="sectionbody">
+               <div class="paragraph">
+                   <p>
+                 Repeat the task from part 2c for the following videos.
+                 That is, your program should count both the coins collected by
+       the player and the fire projectiles.
+                 Hint: you may need to stabilize the image before processing.
+                   </p>
+               </div>
+               <table class="tableblock frame-all grid-all" style=" width:100%; ">
+                   <tbody>
+
+                   <tr>
+                       <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_ec2/ec2_mario_1.m4v" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                           </p>
+                       </td>
+
+                   </tr>
+                   <tr>
+                       <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock"><span class="video">
+              <video width="100%" controls>
+               <source src="part_ec2/ec2_mario_2.m4v" type="video/mp4">
+               Your browser does not support HTML5 video.
+              </video>
+              </span>
+                           </p>
+                       </td>
+
+                   </tr>
+                   <tr>
+                       <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part ec2 video 1 -->
+                  <source src="part_ec2/ec1_output.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                           </p>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td class="tableblock halign-left valign-top" >
+                           <p class="tableblock">
+                     <span class="image">
+                       <video width="100%" controls>
+                  <!-- MAKE CHANGES HERE: Part ec2 video 2 -->
+                  <source src="part_ec2/ec1_output.mp4" type="video/mp4">
+                           <!-- END CHANGES -->
+                  Your browser does not support HTML5 video.
+                </video>
+                     </span>
+                           </p>
+                       </td>
+                   </tr>
+                   </tbody>
+               </table>
+               <div class="listingblock">
+                   <div class="title">Source</div>
+                   <div class="content monospaced">
+                       <!-- MAKE CHANGES HERE: Part ec1 OpenCV code -->
+                       <p>Note: change the file name to link your code</p>
+                       <div class="codetext">
+                           <object class="codeobject" type="text/html" data="part_ec1/ec1_code.cpp"></object>
+                       </div>
+                       <!-- END CHANGES -->
+                   </div>
+               </div>
+
+               <!-- ----------------------------------- END PART ec1 ----------------------------------- -->
+
+
+
+      <div id="footer">
+         <div id="footer-text">
+            Last updated 2020-02-11
+         </div>
+      </div>
+   </body>
+</html>
